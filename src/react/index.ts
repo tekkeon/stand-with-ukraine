@@ -1,0 +1,1 @@
+export { SWUBanner } from "./SWUBanner";

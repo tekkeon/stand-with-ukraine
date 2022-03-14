@@ -1,25 +1,32 @@
+import { DonateUrls } from "./constants";
+
 export interface SWUElement {
   /**
-   * Text to display for the donate button/link
+   * The HTML element containing the element.
    */
-  readonly donateText?: string;
-  /**
-   * As a boolean, whether or not to display default donate button URL.
-   * As text, the URL for the donate button.
-   */
-  readonly donateUrl?: string | boolean;
+  containerElement?: HTMLElement;
   /**
    * The HTML div element.
    */
-  readonly element: HTMLDivElement;
+  element: HTMLDivElement;
+  /**
+   * Text to display for the donate button/link
+   */
+  helpText?: string | boolean;
   /**
    * The text to display in the banner and call to action or alt text (for badge)
    */
-  readonly text?: string;
+  text?: string;
   /**
    * The type of element (e.g. "badge" | "banner" | "callToAction")
    */
-  readonly type: SWUElementType;
+  type: SWUElementType;
+  /**
+   * Update the SWU element with new options
+   */
+  update: (options: SWUOptions) => void;
 }
 
-export type SWUElementType = "badge" | "banner" | "callToAction";
+export type SWUElementType = "banner" | "callToAction" | "ribbon";
+
+export type SWUOptions = Omit<SWUElement, "element" | "type" | "update">;

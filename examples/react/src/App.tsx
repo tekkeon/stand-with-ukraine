@@ -1,5 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { SWUBannerOptions, SWUColors } from "../../../dist";
+import { SWUBanner } from "stand-with-ukraine/react";
 
 export default function App() {
-  return <div>Test</div>;
+  const [bannerOptions, setBannerOptions] = useState<SWUBannerOptions>();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setBannerOptions({
+        bannerColor: SWUColors.GREEN,
+      });
+    }, 2000);
+  }, []);
+
+  return (
+    <div>
+      <SWUBanner {...bannerOptions} />
+      Test
+    </div>
+  );
 }
