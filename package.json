@@ -1,0 +1,44 @@
+{
+  "name": "stand-with-ukraine",
+  "version": "1.0.0",
+  "description": "Front-end components to support Ukraine",
+  "main": "./dist/index.js",
+  "types": "./dist",
+  "files": [
+    "./dist/*"
+  ],
+  "scripts": {
+    "build": "tsc && npm run copy-files",
+    "copy-files": "shx cp ./src/styles.css ./dist/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkossoris/stand-with-ukraine.git"
+  },
+  "keywords": [
+    "ukraine",
+    "support",
+    "donate",
+    "react",
+    "vanillajs",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Mitchell Kossoris",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkossoris/stand-with-ukraine/issues"
+  },
+  "homepage": "https://github.com/mkossoris/stand-with-ukraine#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.40",
+    "@types/react-dom": "^17.0.13",
+    "shx": "^0.3.4",
+    "typescript": "^4.6.2"
+  }
+}

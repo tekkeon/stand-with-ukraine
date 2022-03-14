@@ -1,0 +1,15 @@
+{
+  "name": "stand-with-ukraine-vanillajs",
+  "version": "1.0.0",
+  "description": "Example VanillaJS website using stand-with-ukraine",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild advanced.ts --outfile=./public/advanced.js --bundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mitchell Kossoris",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.14.25"
+  }
+}
