@@ -21,8 +21,8 @@ Use this option if you have a simple, static website or want a quick option.
 ```html
 <head>
   ...
-  <link rel="stylesheet" href="../../dist/public/styles.css"  />
-  <script src="../../dist/scripts/basic.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stand-with-ukraine/dist/styles.css"  />
+  <script src="https://cdn.jsdelivr.net/npm/stand-with-ukraine/dist/scripts/basic.js" defer></script>
 </head>
 ```
 
@@ -32,7 +32,7 @@ To configure the component, add properties as HTML attributes to the script tag 
 <head>
   ...
   <script
-	  src="../../dist/scripts/basic.js"
+	  src="https://cdn.jsdelivr.net/npm/stand-with-ukraine/dist/scripts/basic.js"
 	  <!-- swu-type is a required parameter -->
 	  swu-type="banner"
 	  swu-text="We support Ukraine"
@@ -51,8 +51,8 @@ Use this option when you want to use more of the SWU options - specifically the 
 ```html
 <head>
   ...
-  <link rel="stylesheet" href="../../dist/public/styles.css"  />
-  <script src="../../dist/scripts/advanced.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stand-with-ukraine/dist/styles.css"  />
+  <script src="https://cdn.jsdelivr.net/npm/stand-with-ukraine/dist/scripts/advanced.js" defer></script>
 </head>
 ```
 
@@ -82,8 +82,22 @@ If you're using a bundling mechanism with NPM, you can opt to use the `stand-wit
 ```
 npm i stand-with-ukraine
 ```
+#### 2. Import the Styles
+You'll need to import the styles into your application in order for the components to display properly. If your bundler can handler bundling css, you can do this like so:
+```js
+// index.js
+import 'stand-with-ukraine/dist/styles.css'
+```
 
-#### 2. Use the Package
+Or you can do it within your HTML file with the CDN-provided file like so:
+
+```html
+<head>
+  ...
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/stand-with-ukraine/dist/styles.css"  />
+</head>
+```
+#### 3. Use the Package
 ```ts
 import { createSWUBanner, createSWURibbon } from 'stand-with-ukraine';
 

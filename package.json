@@ -1,12 +1,12 @@
 {
   "name": "stand-with-ukraine",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Front-end components to support Ukraine",
   "main": "./dist/index.js",
   "types": "./dist",
   "files": [
-    "./dist/*",
-    "./react/*"
+    "dist/**/*",
+    "react/**/*"
   ],
   "scripts": {
     "build": "tsc && npm run copy-files && npm run build:scripts",
