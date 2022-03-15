@@ -1,6 +1,6 @@
 {
   "name": "stand-with-ukraine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Front-end components to support Ukraine",
   "main": "./dist/index.js",
   "types": "./dist",
