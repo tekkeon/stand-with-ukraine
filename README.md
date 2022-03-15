@@ -3,7 +3,18 @@
 
 This project aims to rally the digital world around supporting Ukraine. By painting the web with these unified components, users will see not just the support of any one website, but the support of the internet as a whole.
 
-The project supports two component types: banner and ribbon. The banner is a 100% width component that is typically meant to sit at the top of the website. It displays a support message and call-to-action link that sends the user to the [UN's relief fund website](https://crisisrelief.un.org/t/ukraine). The ribbon sits in a corner of a website and its title (which appears after hovering) contains the text and call-to-action message, and clicking it directs the user to the fund's website.
+## Components
+The project supports two component types: Banner and Ribbon. The banner is a 100% width component that is typically meant to sit at the top of the website. It displays a support message and call-to-action link that sends the user to the [UN's relief fund website](https://crisisrelief.un.org/t/ukraine). The ribbon sits in a corner of a website and its title (which appears after hovering) contains the text and call-to-action message, and clicking it directs the user to the fund's website.
+
+### Banner
+*Default*
+![Default Banner](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/img/BannerDefault.png)
+
+*Dark Theme*
+![Dark Theme Banner](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/img/BannerDark.png)
+
+### Ribbon
+![Default Ribbon]()
 
 ## Installation
 To make this project as accessible and simple to use as possible, we provide several ways to incorporate our components into your website.
@@ -25,16 +36,18 @@ To configure the component, add properties as HTML attributes to the script tag 
 <head>
   ...
   <script
-	src="../../dist/scripts/basic.js"
-	<!-- swu-type is a required parameter -->
-	swu-type="banner"
-	swu-text="We support Ukraine"
-	swu-help-link-text="false"
-	defer
+	  src="../../dist/scripts/basic.js"
+	  <!-- swu-type is a required parameter -->
+	  swu-type="banner"
+	  swu-text="We support Ukraine"
+	  swu-help-link-text="false"
+	  defer
   >
   </script>
 </head>
 ```
+
+*Check out a more full example [here](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/vanilla-basic)*
 ### VanillaJS
 Use this option when you want to use more of the SWU options - specifically the `containerElement` option.
 
@@ -64,6 +77,8 @@ ribbon.update({ /* options */ })
 // Access the underlying HTMLElement with the SWUElement.element property.
 const ribbonElement = ribbon.element;
 ```
+
+*Check out a more full example [here](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/vanilla-advanced)*
 ### VanillaJS w/Bundling
 If you're using a bundling mechanism with NPM, you can opt to use the `stand-with-ukraine` NPM package. With this option, you'll also gain type support when using TypeScript.
 
@@ -88,6 +103,8 @@ ribbon.update({ /* options */ })
 // Access the underlying HTMLElement with the SWUElement.element property.
 const ribbonElement = ribbon.element;
 ```
+
+*Check out a more full example [here](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/vanilla-advanced-bundler)*
 ### React
 In addition, we also export React components for those using the React library.
 
@@ -119,6 +136,8 @@ export const App = () => {
   );
 }
 ```
+
+*Check out a more full example [here](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/react)*
 ## API
 ### BannerOptions
 -  `text?`: `string` - The support message to display. Default is "We #StandWithUkraine"

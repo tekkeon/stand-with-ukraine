@@ -20,7 +20,7 @@ export interface SWUBannerElement extends SWUElement {
 }
 
 const DEFAULT_BANNER_OPTIONS: SWUBannerOptions = {
-  bannerColor: "PURPLE",
+  bannerColor: "BLUE",
   text: "We #StandWithUkraine",
   helpLinkText: "Help Provide Aid to Ukraine",
 };

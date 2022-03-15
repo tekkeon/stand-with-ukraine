@@ -8,17 +8,17 @@ export default function App() {
   });
   const [ribbonOptions, setRibbonOptions] = useState<SWURibbonOptions>();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setBannerOptions({
-        bannerColor: SWUColors.GREEN,
-        darkTheme: true,
-      });
-      setRibbonOptions({
-        position: "bottom-right",
-      });
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setBannerOptions({
+  //       bannerColor: SWUColors.GREEN,
+  //       darkTheme: true,
+  //     });
+  //     setRibbonOptions({
+  //       position: "bottom-right",
+  //     });
+  //   }, 2000);
+  // }, []);
 
   return (
     <div>

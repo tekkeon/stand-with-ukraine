@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc && npm run copy-files && npm run build:scripts",
     "build:scripts": "esbuild ./src/scripts/basic.ts ./src/scripts/advanced.ts --outdir=./dist/scripts --bundle --loader:.svg=text",
-    "copy-files": "shx cp -r ./src/public ./dist/public",
+    "copy-files": "shx cp -r ./src/public ./dist/public && shx cp -r ./src/styles.css ./dist/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

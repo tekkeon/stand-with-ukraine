@@ -20523,7 +20523,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       exports.mergeOptionsWithDefaults = void 0;
       var constants_1 = require_constants();
       var DEFAULT_BANNER_OPTIONS = {
-        bannerColor: "PURPLE",
+        bannerColor: "BLUE",
         text: "We #StandWithUkraine",
         helpLinkText: "Help Provide Aid to Ukraine"
       };
@@ -20539,210 +20539,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return mergedOptions;
       };
       exports.mergeOptionsWithDefaults = mergeOptionsWithDefaults;
-    }
-  });
-
-  // ../../dist/core/createSWUBanner.js
-  var require_createSWUBanner = __commonJS({
-    "../../dist/core/createSWUBanner.js"(exports) {
-      "use strict";
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.createSWUBanner = void 0;
-      var constants_1 = require_constants();
-      var bannerOptions_1 = require_bannerOptions();
-      var _options;
-      var _swuBannerElement;
-      var createSWUBanner = (options) => {
-        if (_swuBannerElement) {
-          return _swuBannerElement;
-        }
-        _options = (0, bannerOptions_1.mergeOptionsWithDefaults)(options);
-        const bannerElement = document.createElement("div");
-        bannerElement.classList.add("swu-banner");
-        _swuBannerElement = {
-          element: bannerElement,
-          type: "banner",
-          update: updateSWUBanner
-        };
-        updateSWUBanner(_options);
-        if (_options.containerElement) {
-          _options.containerElement.prepend(bannerElement);
-          _swuBannerElement.containerElement = _options.containerElement;
-        } else {
-          document.body.prepend(bannerElement);
-        }
-        return _swuBannerElement;
-      };
-      exports.createSWUBanner = createSWUBanner;
-      var updateSWUBanner = (options) => {
-        _options = {
-          ..._options,
-          ...options
-        };
-        const { element } = _swuBannerElement;
-        element.innerHTML = "";
-        element.style.backgroundColor = _options.darkTheme ? constants_1.DARK_THEME_COLOR : _options.bannerColor;
-        const bannerTextElement = document.createElement("span");
-        bannerTextElement.className = "swu-banner-text";
-        bannerTextElement.textContent = `${_options.text} `;
-        element.append(bannerTextElement);
-        if (_options.helpLinkText === false) {
-          return;
-        }
-        const bannerHelpLink = document.createElement("a");
-        bannerHelpLink.className = "swu-banner-help";
-        bannerHelpLink.textContent = _options.helpLinkText;
-        bannerHelpLink.href = constants_1.WEBSITE_URL;
-        bannerHelpLink.target = "_blank";
-        if (_options.darkTheme) {
-          bannerHelpLink.style.color = _options.bannerColor;
-          bannerHelpLink.style.textDecoration = "none";
-        }
-        element.append(bannerHelpLink);
-      };
-    }
-  });
-
-  // ../../dist/core/ribbonOptions.js
-  var require_ribbonOptions = __commonJS({
-    "../../dist/core/ribbonOptions.js"(exports) {
-      "use strict";
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.mergeOptionsWithDefaults = void 0;
-      var DEFAULT_BANNER_OPTIONS = {
-        helpLinkText: "Click to learn more.",
-        position: "bottom-left",
-        text: "We #StandWithUkraine."
-      };
-      var mergeOptionsWithDefaults = (options = {}) => {
-        const mergedOptions = {
-          ...DEFAULT_BANNER_OPTIONS,
-          ...options
-        };
-        if (options.helpLinkText === false) {
-          mergedOptions.helpLinkText = "";
-        }
-        return mergedOptions;
-      };
-      exports.mergeOptionsWithDefaults = mergeOptionsWithDefaults;
-    }
-  });
-
-  // ../../dist/core/createSWURibbon.js
-  var require_createSWURibbon = __commonJS({
-    "../../dist/core/createSWURibbon.js"(exports) {
-      "use strict";
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.createSWURibbon = void 0;
-      var constants_1 = require_constants();
-      var ribbonOptions_1 = require_ribbonOptions();
-      var _options;
-      var _swuRibbonElement;
-      var createSWURibbon = (options) => {
-        if (_swuRibbonElement) {
-          return _swuRibbonElement;
-        }
-        _options = (0, ribbonOptions_1.mergeOptionsWithDefaults)(options);
-        const ribbonElement = document.createElement("div");
-        ribbonElement.onclick = () => window.open(constants_1.WEBSITE_URL, "_blank");
-        _swuRibbonElement = {
-          element: ribbonElement,
-          type: "ribbon",
-          update: updateSWURibbon
-        };
-        updateSWURibbon(_options);
-        if (_options.containerElement) {
-          _options.containerElement.append(ribbonElement);
-          _swuRibbonElement.containerElement = _options.containerElement;
-        } else {
-          document.body.prepend(ribbonElement);
-        }
-        return _swuRibbonElement;
-      };
-      exports.createSWURibbon = createSWURibbon;
-      var updateSWURibbon = (options) => {
-        const { element } = _swuRibbonElement;
-        _options = {
-          ..._options,
-          ...options
-        };
-        element.title = `${_options.text} ${_options.helpLinkText}`;
-        element.className = "";
-        element.classList.add("swu-ribbon", `swu-ribbon-${_options.position}`);
-      };
-    }
-  });
-
-  // ../../dist/types.js
-  var require_types = __commonJS({
-    "../../dist/types.js"(exports) {
-      "use strict";
-      Object.defineProperty(exports, "__esModule", { value: true });
-    }
-  });
-
-  // ../../dist/core/index.js
-  var require_core = __commonJS({
-    "../../dist/core/index.js"(exports) {
-      "use strict";
-      var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-          desc = { enumerable: true, get: function() {
-            return m[k];
-          } };
-        }
-        Object.defineProperty(o, k2, desc);
-      } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        o[k2] = m[k];
-      });
-      var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p))
-            __createBinding(exports2, m, p);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.SWUColors = void 0;
-      var constants_1 = require_constants();
-      Object.defineProperty(exports, "SWUColors", { enumerable: true, get: function() {
-        return constants_1.SWUColors;
-      } });
-      __exportStar(require_createSWUBanner(), exports);
-      __exportStar(require_createSWURibbon(), exports);
-      __exportStar(require_types(), exports);
-    }
-  });
-
-  // ../../dist/index.js
-  var require_dist = __commonJS({
-    "../../dist/index.js"(exports) {
-      "use strict";
-      var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-          desc = { enumerable: true, get: function() {
-            return m[k];
-          } };
-        }
-        Object.defineProperty(o, k2, desc);
-      } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        o[k2] = m[k];
-      });
-      var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p))
-            __createBinding(exports2, m, p);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      __exportStar(require_core(), exports);
     }
   });
 
@@ -20769,6 +20565,31 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return react_1.default.createElement("div", { className: "swu-banner", style: { backgroundColor: darkTheme ? constants_1.DARK_THEME_COLOR : bannerColor } }, react_1.default.createElement("span", { className: "swu-banner-text" }, mergedOptions.text, " "), react_1.default.createElement("a", { className: "swu-banner-help", target: "_blank", href: constants_1.WEBSITE_URL, style: helpTextStyle }, mergedOptions.helpLinkText));
       };
       exports.SWUBanner = SWUBanner2;
+    }
+  });
+
+  // ../../dist/core/ribbonOptions.js
+  var require_ribbonOptions = __commonJS({
+    "../../dist/core/ribbonOptions.js"(exports) {
+      "use strict";
+      Object.defineProperty(exports, "__esModule", { value: true });
+      exports.mergeOptionsWithDefaults = void 0;
+      var DEFAULT_BANNER_OPTIONS = {
+        helpLinkText: "Click to learn more.",
+        position: "bottom-left",
+        text: "We #StandWithUkraine."
+      };
+      var mergeOptionsWithDefaults = (options = {}) => {
+        const mergedOptions = {
+          ...DEFAULT_BANNER_OPTIONS,
+          ...options
+        };
+        if (options.helpLinkText === false) {
+          mergedOptions.helpLinkText = "";
+        }
+        return mergedOptions;
+      };
+      exports.mergeOptionsWithDefaults = mergeOptionsWithDefaults;
     }
   });
 
@@ -20816,7 +20637,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/App.tsx
   var import_react = __toESM(require_react());
-  var import_dist = __toESM(require_dist());
 
   // ../../react/index.js
   var react_exports = {};
@@ -20828,17 +20648,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       darkTheme: true
     });
     const [ribbonOptions, setRibbonOptions] = (0, import_react.useState)();
-    (0, import_react.useEffect)(() => {
-      setTimeout(() => {
-        setBannerOptions({
-          bannerColor: import_dist.SWUColors.GREEN,
-          darkTheme: true
-        });
-        setRibbonOptions({
-          position: "bottom-right"
-        });
-      }, 2e3);
-    }, []);
     return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("header", {
       style: {
         position: "fixed",
