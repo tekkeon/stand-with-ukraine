@@ -1,4 +1,4 @@
-import { WEBSITE_URL } from "../constants";
+import { DARK_THEME_COLOR, WEBSITE_URL } from "../constants";
 import {
   mergeOptionsWithDefaults,
   SWUBannerElement,
@@ -48,7 +48,7 @@ const updateSWUBanner = (options: SWUBannerOptions) => {
 
   element.innerHTML = "";
   element.style.backgroundColor = _options.darkTheme
-    ? "#222425"
+    ? DARK_THEME_COLOR
     : _options.bannerColor!;
 
   const bannerTextElement = document.createElement("span");

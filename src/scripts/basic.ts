@@ -1,7 +1,6 @@
 import { createSWUBanner, createSWURibbon } from "../core";
 import { getScriptOptions } from "./options";
-import "../styles.css";
-console.log("Hellooooo??");
+import "../public/styles.css";
 
 const options = getScriptOptions();
 console.log(options);

@@ -3,13 +3,16 @@ import { SWUBannerOptions, SWUColors, SWURibbonOptions } from "../../../dist";
 import { SWUBanner, SWURibbon } from "stand-with-ukraine/react";
 
 export default function App() {
-  const [bannerOptions, setBannerOptions] = useState<SWUBannerOptions>();
+  const [bannerOptions, setBannerOptions] = useState<SWUBannerOptions>({
+    darkTheme: true,
+  });
   const [ribbonOptions, setRibbonOptions] = useState<SWURibbonOptions>();
 
   useEffect(() => {
     setTimeout(() => {
       setBannerOptions({
         bannerColor: SWUColors.GREEN,
+        darkTheme: true,
       });
       setRibbonOptions({
         position: "bottom-right",

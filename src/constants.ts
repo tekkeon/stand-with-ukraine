@@ -18,4 +18,6 @@ export const SWUColors = {
   RED: "#dc4a4a",
 };
 
+export const DARK_THEME_COLOR = "#222425";
+
 export const WEBSITE_URL = "#";

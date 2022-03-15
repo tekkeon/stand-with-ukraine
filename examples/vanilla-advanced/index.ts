@@ -10,7 +10,6 @@ const banner = createSWUBanner({
   bannerColor: SWUColors.BLUE,
   containerElement: document.getElementById("header")!,
   darkTheme: true,
-  helpLinkText: false,
 });
 
 const ribbon = createSWURibbon({
