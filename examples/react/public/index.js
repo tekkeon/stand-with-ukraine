@@ -20511,7 +20511,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         RED: "#dc4a4a"
       };
       exports.DARK_THEME_COLOR = "#222425";
-      exports.WEBSITE_URL = "#";
+      exports.WEBSITE_URL = "https://crisisrelief.un.org/t/ukraine";
     }
   });
 

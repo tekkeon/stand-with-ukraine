@@ -20,4 +20,4 @@ export const SWUColors = {
 
 export const DARK_THEME_COLOR = "#222425";
 
-export const WEBSITE_URL = "#";
+export const WEBSITE_URL = "https://crisisrelief.un.org/t/ukraine";

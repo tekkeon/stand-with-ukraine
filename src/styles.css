@@ -16,13 +16,14 @@
 .swu-banner-text::after {
   background-repeat: no-repeat;
   background-size: contain;
-  background: url(./HeartIcon.svg);
+  background: url(https://cdn.jsdelivr.net/gh/mkossoris/stand-with-ukraine@main/src/public/HeartIcon.svg);
   content: " ";
   display: inline-block;
   height: 1.1em;
   margin-right: 5px;
   position: absolute;
   width: 1.3em;
+  background-size: contain;
 }
 
 .swu-banner-help {

@@ -1,4 +1,4 @@
-/* ../../dist/styles.css */
+/* ../../dist/public/styles.css */
 .swu-banner {
   background-color: transparent;
   color: white;
@@ -9,13 +9,19 @@
 }
 .swu-banner-text {
   font-size: 1em;
+  margin-right: 24px;
 }
 .swu-banner-text::after {
-  content: url(https://henrikstensoneyewear.com/wp-content/uploads/2022/03/ukraine-heart-hse.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background: url(https://cdn.jsdelivr.net/gh/mkossoris/stand-with-ukraine@main/src/public/HeartIcon.svg);
+  content: " ";
   display: inline-block;
+  height: 1.1em;
   margin-right: 5px;
-  height: 1em;
-  width: 1em;
+  position: absolute;
+  width: 1.3em;
+  background-size: contain;
 }
 .swu-banner-help {
   color: white;
