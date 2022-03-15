@@ -1,6 +1,6 @@
-export { SWUBannerElement, SWUBannerOptions } from "./banner";
+export { SWUBannerElement, SWUBannerOptions } from "./bannerOptions";
 export { SWUColors } from "../constants";
 export * from "./createSWUBanner";
 export * from "./createSWURibbon";
-export { SWURibbonElement, SWURibbonOptions } from "./ribbon";
+export { SWURibbonElement, SWURibbonOptions } from "./ribbonOptions";
 export * from "../types";

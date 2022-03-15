@@ -1,6 +1,9 @@
 import React from "react";
 import { WEBSITE_URL } from "../constants";
-import { mergeOptionsWithDefaults, SWURibbonOptions } from "../core/ribbon";
+import {
+  mergeOptionsWithDefaults,
+  SWURibbonOptions,
+} from "../core/ribbonOptions";
 
 export const SWURibbon = (options: SWURibbonOptions) => {
   const mergedOptions = mergeOptionsWithDefaults(options);

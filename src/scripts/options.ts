@@ -4,7 +4,7 @@ import {
   SWUOptions,
   SWURibbonOptions,
 } from "..";
-import { mergeOptionsWithDefaults as mergeBannerOptionsWithDefaults } from "../core/banner";
+import { mergeOptionsWithDefaults as mergeBannerOptionsWithDefaults } from "../core/bannerOptions";
 
 export const getScriptOptions = ():
   | (SWUBannerOptions & { type: "banner" })

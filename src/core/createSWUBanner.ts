@@ -3,7 +3,7 @@ import {
   mergeOptionsWithDefaults,
   SWUBannerElement,
   SWUBannerOptions,
-} from "./banner";
+} from "./bannerOptions";
 
 let _options: SWUBannerOptions;
 let _swuBannerElement: SWUBannerElement;

@@ -1,6 +1,9 @@
 import React from "react";
 import { WEBSITE_URL } from "../constants";
-import { mergeOptionsWithDefaults, SWUBannerOptions } from "../core/banner";
+import {
+  mergeOptionsWithDefaults,
+  SWUBannerOptions,
+} from "../core/bannerOptions";
 
 export const SWUBanner = (options: SWUBannerOptions) => {
   const mergedOptions = mergeOptionsWithDefaults(options);

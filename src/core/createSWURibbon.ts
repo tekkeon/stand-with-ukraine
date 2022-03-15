@@ -3,7 +3,7 @@ import {
   mergeOptionsWithDefaults,
   SWURibbonElement,
   SWURibbonOptions,
-} from "./ribbon";
+} from "./ribbonOptions";
 
 let _options: SWURibbonOptions;
 let _swuRibbonElement: SWURibbonElement;
