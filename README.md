@@ -1,5 +1,5 @@
 
-# Stand With Ukraine
+# Stand With Ukraine 🇺🇦
 
 This project aims to rally the digital world around supporting Ukraine. By painting the web with these unified components, users will see not just the support of any one website, but the support of the internet as a whole.
 
@@ -10,7 +10,7 @@ To make this project as accessible and simple to use as possible, we provide sev
 ### Static HTML
 Use this option if you have a simple, static website or want a quick option.
 
-#### Add Styles and Scripts
+#### 1. Add Styles and Scripts
 ```html
 <head>
   ...
@@ -19,7 +19,7 @@ Use this option if you have a simple, static website or want a quick option.
 </head>
 ```
 
-#### Configure
+#### 2. Configure
 To configure the component, add properties as HTML attributes to the script tag itself. When referencing the API below, instead of using `camelCase`, use `kebab-case` and prefix with `swu-` as the attribute name. For example, `helpTextLink` would become `swu-help-text-link`. You **MUST** set `swu-type` to tell the script which type of element to create. Here's an example of what this would look like in practice:
 ```html
 <head>
@@ -38,7 +38,7 @@ To configure the component, add properties as HTML attributes to the script tag 
 ### VanillaJS
 Use this option when you want to use more of the SWU options - specifically the `containerElement` option.
 
-#### Add Styles and Script
+#### 1. Add Styles and Script
 ```html
 <head>
   ...
@@ -47,7 +47,7 @@ Use this option when you want to use more of the SWU options - specifically the 
 </head>
 ```
 
-#### Programmatically Create Elements
+#### 2. Programmatically Create Elements
 The script will add a property `SWU` to the window object. This is where you can find the two top-level functions `createBanner` and `createRibbon`. Here is an example of how to use this:
 ```js
 const { SWU } = window;
@@ -67,12 +67,12 @@ const ribbonElement = ribbon.element;
 ### VanillaJS w/Bundling
 If you're using a bundling mechanism with NPM, you can opt to use the `stand-with-ukraine` NPM package. With this option, you'll also gain type support when using TypeScript.
 
-#### Install the Package
+#### 1. Install the Package
 ```
 npm i stand-with-ukraine
 ```
 
-#### Use the Package
+#### 2. Use the Package
 ```ts
 import { createSWUBanner, createSWURibbon } from 'stand-with-ukraine';
 
@@ -91,18 +91,18 @@ const ribbonElement = ribbon.element;
 ### React
 In addition, we also export React components for those using the React library.
 
-#### Install the Package
+#### 1. Install the Package
 ```
 npm i stand-with-ukraine
 ```
 
-#### Import the Styles
+#### 2. Import the Styles
 You'll need to import the styles into your application in order for the components to display properly. This is typically best done in the index file. Example:
 ```js
 // index.js
 import 'stand-with-ukraine/dist/styles.css'
 ```
-#### Use the Components
+#### 3. Use the Components
 ```jsx
 import {
   SWUBanner,
