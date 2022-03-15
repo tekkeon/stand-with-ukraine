@@ -1,7 +1,7 @@
 
 # Stand With Ukraine 🇺🇦
 
-This project aims to rally the digital world around supporting Ukraine. By painting the web with these unified components, users will see not just the support of any one website, but the support of the internet as a whole.
+This project aims to rally the digital world around supporting Ukraine. By painting the web with these unified components, users will see not just the support of any one website, but the support of the internet as a whole. This in turn can help garner additional social/political pressure and monetary support to aid Ukraine in this war.
 
 ## Components
 The project supports two component types: Banner and Ribbon. The banner is a 100% width component that is typically meant to sit at the top of the website. It displays a support message and call-to-action link that sends the user to the [UN's relief fund website](https://crisisrelief.un.org/t/ukraine). The ribbon sits in a corner of a website and its title (which appears after hovering) contains the text and call-to-action message, and clicking it directs the user to the fund's website.
