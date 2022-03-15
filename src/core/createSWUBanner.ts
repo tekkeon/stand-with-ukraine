@@ -1,15 +1,9 @@
-import { SWUColors, WEBSITE_URL } from "../constants";
-import { SWUElement, SWUOptions } from "../types";
-
-export interface SWUBannerOptions extends SWUOptions {
-  bannerColor?: keyof typeof SWUColors | string;
-}
-
-export interface SWUBannerElement extends SWUElement {
-  bannerColor?: keyof typeof SWUColors | string;
-  type: "banner";
-  update: (options: SWUBannerOptions) => void;
-}
+import { WEBSITE_URL } from "../constants";
+import {
+  mergeOptionsWithDefaults,
+  SWUBannerElement,
+  SWUBannerOptions,
+} from "./banner";
 
 let _options: SWUBannerOptions;
 let _swuBannerElement: SWUBannerElement;
@@ -17,6 +11,10 @@ let _swuBannerElement: SWUBannerElement;
 export const createSWUBanner = (
   options?: SWUBannerOptions
 ): SWUBannerElement => {
+  if (_swuBannerElement) {
+    return _swuBannerElement;
+  }
+
   _options = mergeOptionsWithDefaults(options);
 
   const bannerElement = document.createElement("div");
@@ -49,43 +47,30 @@ const updateSWUBanner = (options: SWUBannerOptions) => {
   const { element } = _swuBannerElement;
 
   element.innerHTML = "";
-  element.style.backgroundColor = _options.bannerColor!;
+  element.style.backgroundColor = _options.darkTheme
+    ? "#222425"
+    : _options.bannerColor!;
 
   const bannerTextElement = document.createElement("span");
   bannerTextElement.className = "swu-banner-text";
   bannerTextElement.textContent = `${_options.text!} `;
 
+  element.append(bannerTextElement);
+
+  if (_options.helpLinkText === false) {
+    return;
+  }
+
   const bannerHelpLink = document.createElement("a");
   bannerHelpLink.className = "swu-banner-help";
-  bannerHelpLink.textContent = _options.helpText as string;
+  bannerHelpLink.textContent = _options.helpLinkText as string;
   bannerHelpLink.href = WEBSITE_URL;
   bannerHelpLink.target = "_blank";
 
-  element.append(bannerTextElement, bannerHelpLink);
-};
-
-const DEFAULT_BANNER_OPTIONS: SWUBannerOptions = {
-  bannerColor: "PURPLE",
-  text: "We #StandWithUkraine.",
-  helpText: "Learn more.",
-};
-
-const mergeOptionsWithDefaults = (
-  options: SWUBannerOptions = {}
-): SWUBannerOptions => {
-  const mergedOptions = {
-    ...DEFAULT_BANNER_OPTIONS,
-    ...options,
-  };
-
-  if (SWUColors.hasOwnProperty(mergedOptions.bannerColor!)) {
-    const colorKey = mergedOptions.bannerColor as keyof typeof SWUColors;
-    mergedOptions.bannerColor = SWUColors[colorKey];
+  if (_options.darkTheme) {
+    bannerHelpLink.style.color = _options.bannerColor!;
+    bannerHelpLink.style.textDecoration = "none";
   }
 
-  if (options.helpText === false) {
-    mergedOptions.helpText = "";
-  }
-
-  return mergedOptions;
+  element.append(bannerHelpLink);
 };

@@ -5,10 +5,12 @@
   "main": "./dist/index.js",
   "types": "./dist",
   "files": [
-    "./dist/*"
+    "./dist/*",
+    "./react/*"
   ],
   "scripts": {
-    "build": "tsc && npm run copy-files",
+    "build": "tsc && npm run copy-files && npm run build:script",
+    "build:script": "esbuild ./src/scripts/basic.ts --outfile=./dist/scripts/basic.js --bundle",
     "copy-files": "shx cp ./src/styles.css ./dist/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

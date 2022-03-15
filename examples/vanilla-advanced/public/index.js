@@ -46,6 +46,34 @@
     }
   });
 
+  // ../../dist/core/banner.js
+  var require_banner = __commonJS({
+    "../../dist/core/banner.js"(exports) {
+      "use strict";
+      Object.defineProperty(exports, "__esModule", { value: true });
+      exports.mergeOptionsWithDefaults = void 0;
+      var constants_1 = require_constants();
+      var DEFAULT_BANNER_OPTIONS = {
+        bannerColor: "PURPLE",
+        text: "We #StandWithUkraine",
+        helpLinkText: "Help Provide Aid to Ukraine"
+      };
+      var mergeOptionsWithDefaults = (options = {}) => {
+        const mergedOptions = {
+          ...DEFAULT_BANNER_OPTIONS,
+          ...options
+        };
+        console.log({ mergedOptions, options });
+        if (constants_1.SWUColors.hasOwnProperty(mergedOptions.bannerColor)) {
+          const colorKey = mergedOptions.bannerColor;
+          mergedOptions.bannerColor = constants_1.SWUColors[colorKey];
+        }
+        return mergedOptions;
+      };
+      exports.mergeOptionsWithDefaults = mergeOptionsWithDefaults;
+    }
+  });
+
   // ../../dist/core/createSWUBanner.js
   var require_createSWUBanner = __commonJS({
     "../../dist/core/createSWUBanner.js"(exports) {
@@ -53,10 +81,14 @@
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.createSWUBanner = void 0;
       var constants_1 = require_constants();
+      var banner_1 = require_banner();
       var _options;
       var _swuBannerElement;
       var createSWUBanner2 = (options) => {
-        _options = mergeOptionsWithDefaults(options);
+        if (_swuBannerElement) {
+          return _swuBannerElement;
+        }
+        _options = (0, banner_1.mergeOptionsWithDefaults)(options);
         const bannerElement = document.createElement("div");
         bannerElement.classList.add("swu-banner");
         _swuBannerElement = {
@@ -66,7 +98,7 @@
         };
         updateSWUBanner(_options);
         if (_options.containerElement) {
-          _options.containerElement.append(bannerElement);
+          _options.containerElement.prepend(bannerElement);
           _swuBannerElement.containerElement = _options.containerElement;
         } else {
           document.body.prepend(bannerElement);
@@ -81,36 +113,51 @@
         };
         const { element } = _swuBannerElement;
         element.innerHTML = "";
-        element.style.backgroundColor = _options.bannerColor;
+        element.style.backgroundColor = _options.darkTheme ? "#222425" : _options.bannerColor;
         const bannerTextElement = document.createElement("span");
         bannerTextElement.className = "swu-banner-text";
         bannerTextElement.textContent = `${_options.text} `;
+        element.append(bannerTextElement);
+        console.log({ _options });
+        if (_options.helpLinkText === false) {
+          return;
+        }
         const bannerHelpLink = document.createElement("a");
         bannerHelpLink.className = "swu-banner-help";
-        bannerHelpLink.textContent = _options.helpText;
+        bannerHelpLink.textContent = _options.helpLinkText;
         bannerHelpLink.href = constants_1.WEBSITE_URL;
         bannerHelpLink.target = "_blank";
-        element.append(bannerTextElement, bannerHelpLink);
+        if (_options.darkTheme) {
+          bannerHelpLink.style.color = _options.bannerColor;
+          bannerHelpLink.style.textDecoration = "none";
+        }
+        element.append(bannerHelpLink);
       };
+    }
+  });
+
+  // ../../dist/core/ribbon.js
+  var require_ribbon = __commonJS({
+    "../../dist/core/ribbon.js"(exports) {
+      "use strict";
+      Object.defineProperty(exports, "__esModule", { value: true });
+      exports.mergeOptionsWithDefaults = void 0;
       var DEFAULT_BANNER_OPTIONS = {
-        bannerColor: "PURPLE",
-        text: "We #StandWithUkraine.",
-        helpText: "Learn more."
+        helpLinkText: "Click to learn more.",
+        position: "bottom-left",
+        text: "We #StandWithUkraine."
       };
       var mergeOptionsWithDefaults = (options = {}) => {
         const mergedOptions = {
           ...DEFAULT_BANNER_OPTIONS,
           ...options
         };
-        if (constants_1.SWUColors.hasOwnProperty(mergedOptions.bannerColor)) {
-          const colorKey = mergedOptions.bannerColor;
-          mergedOptions.bannerColor = constants_1.SWUColors[colorKey];
-        }
-        if (options.helpText === false) {
-          mergedOptions.helpText = "";
+        if (options.helpLinkText === false) {
+          mergedOptions.helpLinkText = "";
         }
         return mergedOptions;
       };
+      exports.mergeOptionsWithDefaults = mergeOptionsWithDefaults;
     }
   });
 
@@ -121,15 +168,17 @@
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.createSWURibbon = void 0;
       var constants_1 = require_constants();
+      var ribbon_1 = require_ribbon();
       var _options;
-      var _swuBannerElement;
+      var _swuRibbonElement;
       var createSWURibbon2 = (options) => {
-        _options = mergeOptionsWithDefaults(options);
+        if (_swuRibbonElement) {
+          return _swuRibbonElement;
+        }
+        _options = (0, ribbon_1.mergeOptionsWithDefaults)(options);
         const ribbonElement = document.createElement("div");
-        ribbonElement.classList.add("swu-ribbon");
-        ribbonElement.classList.add(`swu-ribbon-${_options.position}`);
         ribbonElement.onclick = () => window.open(constants_1.WEBSITE_URL, "_blank");
-        _swuBannerElement = {
+        _swuRibbonElement = {
           element: ribbonElement,
           type: "ribbon",
           update: updateSWURibbon
@@ -137,34 +186,22 @@
         updateSWURibbon(_options);
         if (_options.containerElement) {
           _options.containerElement.append(ribbonElement);
-          _swuBannerElement.containerElement = _options.containerElement;
+          _swuRibbonElement.containerElement = _options.containerElement;
         } else {
           document.body.prepend(ribbonElement);
         }
-        return _swuBannerElement;
+        return _swuRibbonElement;
       };
       exports.createSWURibbon = createSWURibbon2;
       var updateSWURibbon = (options) => {
+        const { element } = _swuRibbonElement;
         _options = {
           ..._options,
           ...options
         };
-        _swuBannerElement.element.title = `${_options.text} ${_options.helpText}`;
-      };
-      var DEFAULT_BANNER_OPTIONS = {
-        helpText: "Click to learn more.",
-        position: "bottom-left",
-        text: "We #StandWithUkraine."
-      };
-      var mergeOptionsWithDefaults = (options = {}) => {
-        const mergedOptions = {
-          ...DEFAULT_BANNER_OPTIONS,
-          ...options
-        };
-        if (options.helpText === false) {
-          mergedOptions.helpText = "";
-        }
-        return mergedOptions;
+        element.title = `${_options.text} ${_options.helpLinkText}`;
+        element.className = "";
+        element.classList.add("swu-ribbon", `swu-ribbon-${_options.position}`);
       };
     }
   });
@@ -203,13 +240,13 @@
       };
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.SWUColors = void 0;
-      __exportStar(require_createSWUBanner(), exports);
-      __exportStar(require_createSWURibbon(), exports);
-      __exportStar(require_types(), exports);
       var constants_1 = require_constants();
       Object.defineProperty(exports, "SWUColors", { enumerable: true, get: function() {
         return constants_1.SWUColors;
       } });
+      __exportStar(require_createSWUBanner(), exports);
+      __exportStar(require_createSWURibbon(), exports);
+      __exportStar(require_types(), exports);
     }
   });
 
@@ -242,14 +279,19 @@
     }
   });
 
-  // advanced.ts
+  // index.ts
   var import_stand_with_ukraine = __toESM(require_dist());
   var banner = (0, import_stand_with_ukraine.createSWUBanner)({
-    bannerColor: import_stand_with_ukraine.SWUColors.BLUE
+    bannerColor: import_stand_with_ukraine.SWUColors.BLUE,
+    containerElement: document.getElementById("header"),
+    darkTheme: true,
+    helpLinkText: false
   });
-  banner.update({ bannerColor: import_stand_with_ukraine.SWUColors.GOLD });
-  banner.update({ bannerColor: import_stand_with_ukraine.SWUColors.RED });
-  (0, import_stand_with_ukraine.createSWURibbon)({
+  var ribbon = (0, import_stand_with_ukraine.createSWURibbon)({
     position: "bottom-left"
   });
+  setTimeout(() => {
+    banner.update({ bannerColor: import_stand_with_ukraine.SWUColors.PINK });
+    ribbon.update({ position: "bottom-right" });
+  }, 2e3);
 })();

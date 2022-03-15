@@ -4,7 +4,7 @@
   "description": "Example VanillaJS website using stand-with-ukraine",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild advanced.ts --outfile=./public/advanced.js --bundle",
+    "build": "esbuild index.ts --outfile=./public/index.js --bundle",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mitchell Kossoris",

@@ -3,17 +3,16 @@
   background-color: transparent;
   color: white;
   font-family: arial;
-  padding: 5px;
+  padding: 7px 0;
   text-align: center;
   width: 100%;
 }
 
 .swu-banner-text {
   font-size: 1em;
-  font-weight: bold;
 }
 
-.swu-banner-text::before {
+.swu-banner-text::after {
   content: url("https://henrikstensoneyewear.com/wp-content/uploads/2022/03/ukraine-heart-hse.svg");
   display: inline-block;
   margin-right: 5px;

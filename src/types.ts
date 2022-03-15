@@ -12,7 +12,7 @@ export interface SWUElement {
   /**
    * Text to display for the donate button/link
    */
-  helpText?: string | boolean;
+  helpLinkText?: string | boolean;
   /**
    * The text to display in the banner and call to action or alt text (for badge)
    */
@@ -27,6 +27,10 @@ export interface SWUElement {
   update: (options: SWUOptions) => void;
 }
 
-export type SWUElementType = "banner" | "callToAction" | "ribbon";
+export type SWUElementType = "banner" | "ribbon";
 
 export type SWUOptions = Omit<SWUElement, "element" | "type" | "update">;
+
+export type SWUReactOptions = Omit<SWUOptions, "containerElement"> & {
+  child?: boolean;
+};
