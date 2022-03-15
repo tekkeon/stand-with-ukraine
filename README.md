@@ -7,10 +7,10 @@ This project aims to rally the digital world around supporting Ukraine. By paint
 The project supports two component types: Banner and Ribbon. The banner is a 100% width component that is typically meant to sit at the top of the website. It displays a support message and call-to-action link that sends the user to the [UN's relief fund website](https://crisisrelief.un.org/t/ukraine). The ribbon sits in a corner of a website and its title (which appears after hovering) contains the text and call-to-action message, and clicking it directs the user to the fund's website.
 
 *Defaults*
-![Default Components](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/img/Default.png)
+![Default Components](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/img/Default.png?raw=true)
 
 *Dark Mode and Bottom Right Corner*
-![Configured Components](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/img/Customized.png)
+![Configured Components](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/img/Customized.png?raw=true)
 
 ## Installation
 To make this project as accessible and simple to use as possible, we provide several ways to incorporate our components into your website.
