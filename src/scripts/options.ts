@@ -14,6 +14,9 @@ export const getScriptOptions = ():
   const type = script?.getAttribute("swu-type") as SWUElementType;
   const text = script?.getAttribute("swu-text");
   const helpLinkText = script?.getAttribute("swu-help-link-text");
+  const containerSelector = script?.getAttribute(
+    "swu-container-element-selector"
+  );
 
   if (!type || !["banner", "ribbon"].includes(type)) {
     throw new Error(
@@ -29,6 +32,11 @@ export const getScriptOptions = ():
 
   if (helpLinkText) {
     options.helpLinkText = helpLinkText === "false" ? false : helpLinkText;
+  }
+
+  if (containerSelector) {
+    options.containerElement =
+      (document.querySelector(containerSelector) as HTMLElement) ?? undefined;
   }
 
   switch (type) {

@@ -163,7 +163,7 @@ export const App = () => {
 -  `helpLinkText?`: `string | boolean` - The text to display in the call-to-action link. When set to `false`, no link will be displayed. Default is "[Help Provide Aid to Ukraine](https://crisisrelief.un.org/t/ukraine)".
 
 -  `containerElement?`: `HTMLElement` - The element to add the banner to. This is useful for websites with fixed headers or when the banner shouldn't be added to the top of the website. (Note: not available for React component.)
-  - For basic usage, pass in a selector string to be used with `document.querySelector` to the `swu-container-element-selector` attribute on the script tag.
+    - For basic usage, pass in a selector string to be used with `document.querySelector` to the `swu-container-element-selector` attribute on the script tag.
 
 - `bannerColor`: `SWUColors | string` - The color of the banner (note how `darkTheme` changes this property's usage). You may also use the pre-selected colors by using the `SWUColors` import (Note: `SWUColors` is only available for ).
 
@@ -175,6 +175,6 @@ export const App = () => {
 -  `helpLinkText?`: `string | boolean` - The text to display in the call-to-action link. When set to `false`, no link will be displayed. Default is "[Help Provide Aid to Ukraine](https://crisisrelief.un.org/t/ukraine)".
 
 -  `containerElement?`: `HTMLElement` - The element to add the banner to. This is useful for websites with fixed headers or when the banner shouldn't be added to the top of the website. (Note: not available for React component.)
-  - For basic usage, pass in a selector string to be used with `document.querySelector` to the `swu-container-element-selector` attribute on the script tag.
+    - For basic usage, pass in a selector string to be used with `document.querySelector` to the `swu-container-element-selector` attribute on the script tag.
 
 -  `ribbonPosition`: `"bottomLeft" | "bottomRight" | "topLeft" | "topRight"` - The corner to add the ribbon to. Default is "bottomLeft".

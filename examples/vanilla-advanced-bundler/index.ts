@@ -13,10 +13,10 @@ const banner = createSWUBanner({
 });
 
 const ribbon = createSWURibbon({
-  position: "bottom-left",
+  ribbonPosition: "bottom-left",
 });
 
 setTimeout(() => {
   banner.update({ bannerColor: SWUColors.PINK });
-  ribbon.update({ position: "bottom-right" });
+  ribbon.update({ ribbonPosition: "bottom-right" });
 }, 2000);

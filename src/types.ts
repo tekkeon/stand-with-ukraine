@@ -1,5 +1,3 @@
-import { DonateUrls } from "./constants";
-
 export interface SWUElement {
   /**
    * The HTML element containing the element.

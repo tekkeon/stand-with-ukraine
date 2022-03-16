@@ -1,6 +1,7 @@
-import { createSWUBanner, createSWURibbon } from "../core";
+import { createSWUBanner, createSWURibbon, SWUColors } from "../core";
 
 (globalThis as any).SWU = {
   createRibbon: createSWURibbon,
   createBanner: createSWUBanner,
+  Colors: SWUColors,
 };
