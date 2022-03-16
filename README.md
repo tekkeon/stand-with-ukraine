@@ -180,3 +180,13 @@ export const App = () => {
     - For basic usage, pass in a selector string to be used with `document.querySelector` to the `swu-container-element-selector` attribute on the script tag.
 
 -  `ribbonPosition`: `"bottomLeft" | "bottomRight" | "topLeft" | "topRight"` - The corner to add the ribbon to. Default is "bottomLeft".
+
+## List Your Website!
+If you're using the SWU components on your website or see another website using them, please submit an issue or pull request to modify the WEBSITES.md document with the new entry. We want to show strong support and unity, and this is a great place to do that!
+
+## Contributing
+Contributions are always welcome! I would recommend to create an issue to start a conversation before creating a pull request, though it is not strictly required.
+
+## License
+Copyright (c) 2022 Mitchell Kossoris
+Licensed under the [MIT license](https://github.com/mkossoris/stand-with-ukraine/blob/main/LICENSE).
