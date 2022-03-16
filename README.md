@@ -47,7 +47,7 @@ To configure the component, add properties as HTML attributes to the script tag 
 
 *Check out a more full example [here](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/vanilla-basic)*
 ### VanillaJS
-Use this option when you want to use more of the SWU options - specifically the `containerElement` option.
+Use this option when you want to use more of the SWU options or create and modify the elements programmatically.
 
 [![Edit SWU Advanced Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swu-advanced-demo-blnypu?fontsize=14&hidenavigation=1&theme=dark)
 
