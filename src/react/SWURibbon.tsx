@@ -12,7 +12,7 @@ export const SWURibbon = (options: SWURibbonOptions) => {
 
   return (
     <div
-      className={`swu-ribbon swu-ribbon-${mergedOptions.position}`}
+      className={`swu-ribbon swu-ribbon-${mergedOptions.ribbonPosition}`}
       onClick={handleClick}
     ></div>
   );

@@ -15,15 +15,11 @@ export const getScriptOptions = ():
   const text = script?.getAttribute("swu-text");
   const helpLinkText = script?.getAttribute("swu-help-link-text");
 
-  console.log({ type, text, helpLinkText });
-
   if (!type || !["banner", "ribbon"].includes(type)) {
     throw new Error(
       "'type' attribute must be specified as 'banner' or 'ribbon'"
     );
   }
-
-  console.log("after type check");
 
   let options: SWUOptions = {};
 
@@ -35,11 +31,8 @@ export const getScriptOptions = ():
     options.helpLinkText = helpLinkText === "false" ? false : helpLinkText;
   }
 
-  console.log({ options });
-
   switch (type) {
     case "banner":
-      console.log("banner type");
       const bannerOptions: SWUBannerOptions = { ...options };
 
       const bannerColor = script?.getAttribute("swu-banner-color");
@@ -53,7 +46,6 @@ export const getScriptOptions = ():
       }
 
       options = mergeBannerOptionsWithDefaults(bannerOptions);
-      console.log({ options });
       break;
 
     case "ribbon":
@@ -61,7 +53,8 @@ export const getScriptOptions = ():
 
       const ribbonPosition = script?.getAttribute("swu-ribbon-position");
       if (ribbonPosition) {
-        ribbonOptions.position = ribbonPosition as SWURibbonOptions["position"];
+        ribbonOptions.ribbonPosition =
+          ribbonPosition as SWURibbonOptions["ribbonPosition"];
       }
 
       options = mergeBannerOptionsWithDefaults(ribbonOptions);

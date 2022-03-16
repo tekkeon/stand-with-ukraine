@@ -49,5 +49,5 @@ const updateSWURibbon = (options: SWURibbonOptions) => {
 
   element.title = `${_options.text} ${_options.helpLinkText}`;
   element.className = "";
-  element.classList.add("swu-ribbon", `swu-ribbon-${_options.position}`);
+  element.classList.add("swu-ribbon", `swu-ribbon-${_options.ribbonPosition}`);
 };

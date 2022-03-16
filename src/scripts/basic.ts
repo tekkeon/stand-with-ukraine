@@ -3,16 +3,13 @@ import { getScriptOptions } from "./options";
 import "../styles.css";
 
 const options = getScriptOptions();
-console.log(options);
 
 switch (options.type) {
   case "ribbon":
-    console.log("Creating ribbon...");
     createSWURibbon(options);
     break;
 
   case "banner":
-    console.log("Creating banner...");
     createSWUBanner(options);
     break;
 }
