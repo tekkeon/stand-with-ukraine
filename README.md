@@ -1,10 +1,10 @@
 
 # Stand With Ukraine 🇺🇦
 
-This project aims to rally the digital world around supporting Ukraine. By painting the web with these unified components, users will see not just the support of any one website, but the support of the internet as a whole. This in turn can help garner additional social/political pressure and monetary support to aid Ukraine in this war.
+This project aims to rally the digital world around supporting Ukraine. By painting the web with these unified components, users will see not just the support of any one website, but the support of the internet as a whole. This in turn can help garner additional social/political pressure and monetary support to aid Ukraine in this unprovoked war from Russia.
 
 ## Components
-The project supports two component types: Banner and Ribbon. The banner is a 100% width component that is typically meant to sit at the top of the website. It displays a support message and call-to-action link that sends the user to the [UN's relief fund website](https://crisisrelief.un.org/t/ukraine). The ribbon sits in a corner of a website and its title (which appears after hovering) contains the text and call-to-action message, and clicking it directs the user to the fund's website.
+The project supports two component types: Banner and Ribbon. You can choose to use either one or both of these components. The banner is a 100% width component that is typically meant to sit at the top of the website. It displays a support message and call-to-action link that sends the user to the [UN's relief fund website](https://crisisrelief.un.org/t/ukraine). The ribbon sits in a corner of a website and its title (which appears after hovering) contains the text and call-to-action message, and clicking it directs the user to the fund's website.
 
 *Defaults*
 ![Default Components](https://github.com/mkossoris/stand-with-ukraine/blob/main/examples/img/Default.png?raw=true)
@@ -16,6 +16,8 @@ The project supports two component types: Banner and Ribbon. The banner is a 100
 To make this project as accessible and simple to use as possible, we provide several ways to incorporate our components into your website.
 ### Static HTML
 Use this option if you have a simple, static website or want a quick option.
+
+[![Edit SWU Basic Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swu-basic-demo-74wk03?fontsize=14&hidenavigation=1&theme=dark)
 
 #### 1. Add Styles and Scripts
 ```html
@@ -47,6 +49,8 @@ To configure the component, add properties as HTML attributes to the script tag 
 ### VanillaJS
 Use this option when you want to use more of the SWU options - specifically the `containerElement` option.
 
+[![Edit SWU Advanced Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swu-advanced-demo-blnypu?fontsize=14&hidenavigation=1&theme=dark)
+
 #### 1. Add Styles and Script
 ```html
 <head>
@@ -77,6 +81,8 @@ const ribbonElement = ribbon.element;
 *Check out a more full example [here](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/vanilla-advanced)*
 ### VanillaJS w/Bundling
 If you're using a bundling mechanism with NPM, you can opt to use the `stand-with-ukraine` NPM package. With this option, you'll also gain type support when using TypeScript.
+
+[![Edit SWU Advanced w/Bundling Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/swu-advanced-w-bundling-demo-jgk3mh?fontsize=14&hidenavigation=1&theme=dark)
 
 #### 1. Install the Package
 ```
@@ -117,6 +123,8 @@ const ribbonElement = ribbon.element;
 *Check out a more full example [here](https://github.com/mkossoris/stand-with-ukraine/tree/main/examples/vanilla-advanced-bundler)*
 ### React
 In addition, we also export React components for those using the React library.
+
+[![Edit SWU React Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/wispy-cookies-y4ig3j?fontsize=14&hidenavigation=1&theme=dark)
 
 #### 1. Install the Package
 ```
